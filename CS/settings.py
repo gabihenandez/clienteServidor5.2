@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a#(k9tm50l$r@$(kr)uvhh5q6yrws3rkblnck(44z$&pv-@g+p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['clienteservidor5-2.herokuapp.com/']
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     #'rest_framework_swagger',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+try:
+    from CS.local_settings import *
+except ImportError:
+   pass
