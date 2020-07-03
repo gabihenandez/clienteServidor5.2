@@ -21,6 +21,8 @@ from django.conf.urls import include, url
 from rest_framework_swagger.views import get_swagger_view
 
 
+
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
@@ -41,6 +43,8 @@ urlpatterns = [
     url(r'^$', schema_view),
     path('admin/', admin.site.urls),
     re_path(r'^', include(router.urls)),
+    re_path(r'^api/v1/login',include('Login.urls')),
+    #re_path(r'login', CustomAuthToken)
     
 ]
 
