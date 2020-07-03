@@ -30,11 +30,17 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
+
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+schema_view = get_swagger_view(title='Pastebin API')
 
 
 urlpatterns = [
+    url(r'^$', schema_view),
     path('admin/', admin.site.urls),
-   re_path(r'^', include(router.urls))
+    re_path(r'^', include(router.urls)),
+    
 ]
+
