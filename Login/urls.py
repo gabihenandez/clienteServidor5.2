@@ -8,6 +8,5 @@ from rest_framework_swagger.views import get_swagger_view
 from Login.views import CustomAuthToken
 
 urlpatterns = [
-    re_path(r'^',CustomAuthToken.as_view()),
-    
+    re_path(r'^',CustomAuthToken.as_view()), 
 ]
