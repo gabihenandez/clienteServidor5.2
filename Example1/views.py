@@ -46,10 +46,11 @@ class ExampleDetail(APIView):
             serializer = Example1Serializers(example1)
             return Response(serializer.data)
 
-    def put (self,request,id,format=None):
-        mtdput = self.get_object(id)
-        serializer = ExampleSerializers(mtdput,data= request.data)
-        if serializer.is_valid():
-            serializer.save()
-            datas = serializer.data
-            return Response(datas)
+    
+    #def put (self,request,id,format=None):
+    #   mtdput = self.get_object(id)
+     #   serializer = ExampleSerializers(mtdput,data= request.data)
+      #  if serializer.is_valid():
+       #     serializer.save()
+        #    datas = serializer.data
+         #   return Response(datas)
