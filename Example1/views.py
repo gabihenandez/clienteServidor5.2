@@ -40,13 +40,9 @@ class ExampleDetail(APIView):
     def get(self, request, id, format = None):
         print("GET Detail")
         example1 = self.get_object(id)
-        if example1 == 404:
-            return Response ("No hay datos")
-        else:
-            serializer = Example1Serializers(example1)
-            return Response(serializer.data)
-
-    
+        serializer = Example1Serializers(example1)
+        return Response(serializer.data)
+            
     #def put (self,request,id,format=None):
     #   mtdput = self.get_object(id)
      #   serializer = ExampleSerializers(mtdput,data= request.data)
